@@ -14,4 +14,10 @@ Here I will jot down all the elements from this course that I find note-worthy o
     | x | y |
     ```
     *We have 2 columns but 3 tracks.*
+
     [This image](https://github.com/ZapDos7/css-grid/blob/master/04%20-%20CSS%20Grid%20Dev%20Tools/Line%20Meanings.png) is quite helpful for the display of tracks in Firefox.
+3. Explicit VS Implicit: We define the columns explicitly, therefore the rows are defined implicitly. We use these fields:
+   * `grid-auto-rows`: we give the value for the implicitly added rows
+   * `grid-auto-columns`: we give the value for the implicitly added columns
+   *If we give more than 1 values to these, Chrome can handle them as expected.*
+4. `grid-auto-flow`: it manages the way implicitly tracks are added. Its default value is `row` which means we add the overflowing element in a new row. If we give it the value `column`, they're added in a new column (left to right by default, albeit it not being the only way)
