@@ -21,3 +21,7 @@ Here I will jot down all the elements from this course that I find note-worthy o
    * `grid-auto-columns`: we give the value for the implicitly added columns
    *If we give more than 1 values to these, Chrome can handle them as expected.*
 4. `grid-auto-flow`: it manages the way implicitly tracks are added. Its default value is `row` which means we add the overflowing element in a new row. If we give it the value `column`, they're added in a new column (left to right by default, albeit it not being the only way)
+5. Using percentages in the `grid-template-columns` field **does not** take the `grid-gap` value into consideration, which can lead to unorthodox situations and sideways scrolling (if the percentages add up to 100 but the grid gap is not 0), a commonly undesirable feature. The preferable alternative is the `fr unit` which automatically calculates the leftover space and assigns it to an element e.g.:
+   a.`grid-template-columns: 200px 1fr;` means we have a column with 200px width and the other column takes over the rest space in the container.
+   b. `grid-template-columns: 2fr 1fr;` means we have 2 columns, the first takes over twice the space the second one does, both sharing the space of the container in this ratio.
+   c. `grid-template-columns: auto 1fr;` means we have 2 columns, the first takes over the space of the content of this element, and the other column fills up the space of the container.
