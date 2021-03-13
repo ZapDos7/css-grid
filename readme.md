@@ -25,3 +25,7 @@ Here I will jot down all the elements from this course that I find note-worthy o
    a.`grid-template-columns: 200px 1fr;` means we have a column with 200px width and the other column takes over the rest space in the container.
    b. `grid-template-columns: 2fr 1fr;` means we have 2 columns, the first takes over twice the space the second one does, both sharing the space of the container in this ratio.
    c. `grid-template-columns: auto 1fr;` means we have 2 columns, the first takes over the space of the content of this element, and the other column fills up the space of the container.
+6. The `repeat()` function can also take parameters like so: `3, 1fr 2fr` which means 3 repetitions of 2 tracks of which the first has half the width of the second and they both fill up the space given by the container.
+7. Sizing Items:
+Keep in mind that, when using `fr`, firstly we allocate the needed space (e.g. hardcoded width or content width) and then CSS automatically allocates the left over free space to the rest `fr`'d elements. 
+We can therefore use the value `span X` for `grid-column` with X being an integer that specifies the span of the  element (e.g. `span 2` would mean that this element will have double the span of other elements)
