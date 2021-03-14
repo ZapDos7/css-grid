@@ -28,4 +28,9 @@ Here I will jot down all the elements from this course that I find note-worthy o
 6. The `repeat()` function can also take parameters like so: `3, 1fr 2fr` which means 3 repetitions of 2 tracks of which the first has half the width of the second and they both fill up the space given by the container.
 7. Sizing Items:
 Keep in mind that, when using `fr`, firstly we allocate the needed space (e.g. hardcoded width or content width) and then CSS automatically allocates the left over free space to the rest `fr`'d elements. 
-We can therefore use the value `span X` for `grid-column` with X being an integer that specifies the span of the  element (e.g. `span 2` would mean that this element will have double the span of other elements)
+We can therefore use the value `span X` for `grid-column` with X being an integer that specifies the span of the  element (e.g. `span 2` would mean that this element will have double the span of other elements).
+Also, `grid-column` is a shortcut for these two fields: `grid-column-start` and `grid-column-end` so, for example, `grid-column: span 2;` is actually `grid-column-start: span 2; grid-column-end: auto;`
+Additionally, we may define these fields by the starting and ending track number, for example: `grid-column-start: 2; grid-column-end: 5;` begins the element on the second track and spans it until track #5. A shurtcut to this is: `grid-column: 2 / 5;`. Furthermore, we can define it using `span int` for the `start` or the `end` values.
+One useful tip: if we define `grid-column: 1 / -1;` we say we want the element to begin at the first track and end at the last one (useful for an unknown amount of tracks when we want the element to span with the maximum width).
+All of these work with rows, similarly, with the exception of `grid-row: 1 / -1;`, which reaches the bottom **of the explicit grid** and not that of the screen.
+*In order for an element to take over the space of the entire (explicit) grid, we define both `grid-row` and `grid-column` with `1 / -1`. The rest of the elements follow in the implicit grid space.*
