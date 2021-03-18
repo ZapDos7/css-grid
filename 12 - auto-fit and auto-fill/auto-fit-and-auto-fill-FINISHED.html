@@ -27,6 +27,10 @@
     .item4 {
       grid-column-end: -1;
     }
+
+    /*
+    Since we have 4 elements, but define that the last (item4) ends in the end (-1), and since we have auto-fill in our grid-template-columns field, this means that item4 will be actually at the end of the screen/grid. If we had auto-fit, that wouldn't be the case, since the end of the grid would not be the end of the screen.
+    */
   </style>
 </body>
 
